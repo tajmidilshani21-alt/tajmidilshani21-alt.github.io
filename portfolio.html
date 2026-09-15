@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T.G.T.D. Thorawalage — Web Developer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:#17263B;
+    --paper:#F6F3EC;
+    --paper-2:#EFEAE0;
+    --brass:#A9762F;
+    --brass-deep:#7C5522;
+    --line:#D8D0BF;
+    --muted:#5B6472;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+  }
+
+  ::selection{background:var(--brass);color:var(--paper);}
+
+  a{color:var(--brass-deep);}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  header.hero{
+    padding:88px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:clamp(38px,6vw,56px);
+    line-height:1.05;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+  .role{
+    font-size:18px;
+    color:var(--muted);
+    margin:0 0 28px;
+    max-width:46ch;
+  }
+  .hero-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13.5px;
+  }
+  .hero-links a{text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:1px;}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .section-num{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--brass);
+    font-size:14px;
+  }
+  h2{
+    font-family:'Source Serif 4',serif;
+    font-size:26px;
+    margin:0;
+    font-weight:600;
+  }
+
+  .about p{max-width:64ch;font-size:16.5px;}
+
+  .skill-groups{display:grid;gap:22px;}
+  .skill-group h3{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:500;
+    font-size:13px;
+    color:var(--muted);
+    margin:0 0 10px;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    padding:5px 11px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--paper-2);
+  }
+
+  .project{
+    padding:24px 0;
+    border-top:1px solid var(--line);
+  }
+  .project:first-child{border-top:none;padding-top:0;}
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 16px;
+  }
+  .project h3{
+    font-family:'Source Serif 4',serif;
+    font-size:20px;
+    margin:0;
+    font-weight:600;
+  }
+  .stack{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--brass-deep);
+  }
+  .project p{margin:10px 0 0;color:var(--ink);max-width:62ch;}
+
+  .timeline-item{
+    display:grid;
+    grid-template-columns:130px 1fr;
+    gap:18px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .timeline-item:first-child{border-top:none;padding-top:0;}
+  .timeline-date{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .timeline-item h3{
+    font-family:'Source Serif 4',serif;
+    font-size:17px;
+    margin:0 0 4px;
+    font-weight:600;
+  }
+  .timeline-item p{margin:0;color:var(--muted);font-size:14.5px;}
+
+  .cert-list{margin:0;padding:0;list-style:none;}
+  .cert-list li{
+    padding:12px 0;
+    border-top:1px solid var(--line);
+    font-size:15px;
+  }
+  .cert-list li:first-child{border-top:none;padding-top:0;}
+  .cert-list span{display:block;color:var(--muted);font-size:13px;margin-top:2px;}
+
+  footer{padding:56px 0 80px;}
+  .contact-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px 40px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14.5px;
+  }
+  .contact-grid a{text-decoration:none;}
+  .foot-note{margin-top:40px;color:var(--muted);font-size:13px;}
+
+  @media (max-width:560px){
+    header.hero{padding:56px 0 40px;}
+    section{padding:40px 0;}
+    .timeline-item{grid-template-columns:1fr;gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Portfolio — Kandy District, Sri Lanka</p>
+    <h1>T.G.T.D. Thorawalage</h1>
+    <p class="role">IT undergraduate building web systems with PHP, MySQL and JavaScript — available now for internship or industrial training.</p>
+    <div class="hero-links">
+      <a href="mailto:tajmidilshani21@gmail.com">tajmidilshani21@gmail.com</a>
+      <a href="tel:0740925062">074 092 5062</a>
+      <a href="#" id="linkedin-link">LinkedIn</a>
+      <a href="#" id="github-link">GitHub</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <p>Final-year HNDIT student at the Advanced Technological Institute (ATI), Nawalapitiya, with a focus on web development and office administration. Comfortable across the stack — from designing a database schema to building the interface that sits on top of it — and equally at home troubleshooting IT issues or preparing structured documentation. Looking for an entry-level role in web development, IT support, or industrial training where that range is useful.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Development</h3>
+        <div class="chips">
+          <span class="chip">PHP</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">Database Design</span>
+          <span class="chip">OOP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Support &amp; Tools</h3>
+        <div class="chips">
+          <span class="chip">System Administration</span>
+          <span class="chip">IT Troubleshooting</span>
+          <span class="chip">MS Excel</span>
+          <span class="chip">MS Word</span>
+          <span class="chip">MS PowerPoint</span>
+          <span class="chip">Data Entry</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Working languages</h3>
+        <div class="chips">
+          <span class="chip">Sinhala — native</span>
+          <span class="chip">English — fluent</span>
+          <span class="chip">Tamil — working proficiency</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Dairy Farm Milk Collection System</h3>
+        <span class="stack">PHP · MySQL · JS</span>
+      </div>
+      <p>Web system to automate daily milk collection records, supplier data, and payment calculations — built to replace a manual, paper-based process.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>E-Commerce Management System</h3>
+        <span class="stack">PHP · MySQL · JS</span>
+      </div>
+      <p>Online store with product and inventory management, a shopping cart, and order processing from checkout through fulfilment.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Attendance Management System</h3>
+        <span class="stack">PHP · MySQL · JS</span>
+      </div>
+      <p>Tracks employee attendance and leave requests, and generates summary reports for supervisors.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Library Management System</h3>
+        <span class="stack">PHP · MySQL · JS</span>
+      </div>
+      <p>Database-driven system for book inventory, issue/return tracking, and overdue calculation.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Education</h2>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2024–2026</span>
+      <div>
+        <h3>Higher National Diploma in IT (HNDIT)</h3>
+        <p>Advanced Technological Institute (ATI), Nawalapitiya — final-year student, available immediately for industrial training. Key modules: Web Development (PHP, MySQL), Programming with JavaScript, Database Management, System Analysis &amp; Design, OOP.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2023</span>
+      <div>
+        <h3>G.C.E. Advanced Level — Arts Stream</h3>
+        <p>Delta Gamunupura Maha Vidyalaya — passed in all subjects.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2019</span>
+      <div>
+        <h3>G.C.E. Ordinary Level</h3>
+        <p>Mawela Maha Vidyalaya — 5 credit passes including Mathematics, 3 simple passes including English.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Certifications</h2>
+    </div>
+    <ul class="cert-list">
+      <li>Basic Web Application Development (HTML, CSS, JavaScript)<span>Devzee Innovations (Pvt) Ltd</span></li>
+      <li>Microsoft Office Applications<span>Rajarata Padanama Institute</span></li>
+      <li>Diploma in Tamil Language<span>Ceylon English Training College</span></li>
+      <li>Spoken English<span>Rajarata Padanama Institute</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:tajmidilshani21@gmail.com">✉ tajmidilshani21@gmail.com</a>
+      <a href="tel:0740925062">☎ 074 092 5062</a>
+      <span>📍 Kandy District, Sri Lanka</span>
+    </div>
+    <p class="foot-note">Available immediately for internship / industrial training placement.</p>
+  </footer>
+</div>
+
+</body>
+</html>
